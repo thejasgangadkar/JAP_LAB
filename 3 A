@@ -1,0 +1,27 @@
+public class string_function {
+    public static boolean comparesStrings(String str1, String str2) {
+        return str1.equals(str2);
+    }
+
+    public static String concatStrings(String str1, String str2) {
+        return str1.concat(str2);
+    }
+
+    public static String copiesStrings(String original) {
+        return new String(original);
+    }
+
+    public static void main(String[] args) {
+        String str1 = "Hello";
+        String str2 = "World";
+        String original = "Dog";
+
+        System.out.println("Are str1 and str2 equal? " + comparesStrings(str1, str2));
+
+        System.out.println("Concatenated: " + concatStrings(str1, str2));
+
+        String copied = copiesStrings(original);
+        System.out.println("Original string: " + original);
+        System.out.println("Copied string: " + copied);
+    }
+}
