@@ -1,0 +1,43 @@
+package apack;
+
+public class A {
+    int defaultvar=10;
+    protected int protectedvar=20;
+    private int privatevar=30;
+    public int publicvar=40;
+    public A(){
+        System.out.println("This is A");
+    }
+}
+
+package bpack;
+import apack.A;
+public class B  extends A{
+    public void display(){
+        System.out.println("This is a B");
+        System.out.println("Protected:" +protectedvar);
+        System.out.println("Public:" +publicvar);
+    }
+}
+
+package cpack;
+import apack.A;
+public class C {
+    A a=new A();
+    public void display(){
+        System.out.println("This is C");
+        System.out.println("Public:" +a.publicvar);
+    }
+}
+
+package dpack;
+import bpack.B;
+import cpack.C;
+public class ProtectedDemo {
+    public static void main(String[] args) {
+        B b=new B();
+        b.display();
+        C c= new C();
+        c.display();
+    }
+}
