@@ -1,0 +1,43 @@
+package bm23ai199;
+
+import java.util.Scanner;
+public class GymMemberShip {
+    String name = "";
+    int age;
+    int fees = 50;
+    int amt;
+    boolean status;
+    int duration;
+
+    int calc(int duration) {
+        amt = duration * fees;
+        return amt;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        GymMemberShip obj = new GymMemberShip();
+        System.out.println("Enter the number of people");
+        int n = sc.nextInt();
+        for (int i = 1; i <= n; i++) {
+            System.out.println("Enter age of member " + i);
+            obj.age = sc.nextInt();
+            System.out.println("Enter name of member " + i);
+            obj.name = sc.next();
+            System.out.println("Enter duration of member " + i);
+            obj.duration = sc.nextInt();
+            System.out.println("Enter status (True/False) of member " + i);
+            obj.status = sc.nextBoolean();
+            obj.amt = obj.calc(obj.duration);
+
+
+        }
+        for (int i = 1; i <= n; i++) {
+            System.out.println("Age of member" + i + " is = " + obj.age);
+            System.out.println("Name of member" + i + " is = " + obj.name);
+            System.out.println("duration of member" + i + " is = " + obj.duration);
+            System.out.println("Statusof member " + i + " is = " + obj.status);
+            System.out.println("final amount for member " + i + " is " + obj.amt);
+        }
+    }
+}
