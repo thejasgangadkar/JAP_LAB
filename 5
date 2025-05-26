@@ -1,0 +1,50 @@
+import javax.lang.model.element.Name;
+import java.util.Vector;
+class Product{
+    String Name;
+    double Price;
+    String Category;
+
+    public Product(String Name,double Price,String Category){
+        this.Name = Name;
+        this.Price = Price;
+        this.Category = Category;
+    }
+}
+public class onlineshopping{
+    private Vector<Product>inventory;
+
+    public onlineshopping(){
+        inventory = new Vector<>();
+    }
+    public void addProduct(String Name,double Price,String Category){
+        Product product = new Product(Name,Price,Category);
+        inventory.add(product);
+    }
+    public void removeProduct(String name){
+        for(int i = 0;i<inventory.size();i++){
+            if(inventory.get(i).Name.equalsIgnoreCase(name)){
+                inventory.remove(i);
+                break;
+            }
+        }
+    }
+    public void displayInventory(){
+        System.out.println("Inventory");
+        for(Product product : inventory){
+            System.out.println("Name : "+product.Name +" Price : "+ product.Price+" Category : "+product.Category);
+
+        }
+    }
+    public static void main(String args[]){
+        onlineshopping manager = new onlineshopping();
+        manager.addProduct("pizza",230,"food");
+        manager.addProduct("sprite",50,"Drinks");
+        manager.addProduct("apple",50,"Fruite");
+        manager.addProduct("dosa",50,"food");
+        manager.displayInventory();
+        manager.removeProduct("dosa");
+        manager.displayInventory();
+
+    }
+}
