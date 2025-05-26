@@ -1,0 +1,33 @@
+package bm23ai199;
+
+public class wrapper {
+    public static void main(String[] args){
+        // Boxing
+        Integer boxedInt = Integer.valueOf(10);
+        Double boxedDouble = Double.valueOf(20.5556);
+        Character boxedChar = Character.valueOf('A');
+        Float boxedFloat = Float.valueOf(10.1f); // Added 'f' to indicate a float literal
+        Boolean boxedBoolean = Boolean.valueOf(true);
+
+        System.out.println("Boxed Values:");
+        System.out.println("Boxed Int: " + boxedInt);
+        System.out.println("Boxed Double: " + boxedDouble);
+        System.out.println("Boxed Character: " + boxedChar);
+        System.out.println("Boxed Float: " + boxedFloat);
+        System.out.println("Boxed Boolean: " + boxedBoolean);
+
+        // Unboxing
+        int unboxedInt = boxedInt.intValue();
+        double unboxedDouble = boxedDouble.doubleValue();
+        char unboxedChar = boxedChar.charValue();
+        float unboxedFloat = boxedFloat.floatValue();
+        boolean unboxedBoolean = boxedBoolean.booleanValue();
+
+        System.out.println("\nUnboxed Values:");
+        System.out.println("Unboxed Int: " + unboxedInt);
+        System.out.println("Unboxed Double: " + unboxedDouble);
+        System.out.println("Unboxed Character: " + unboxedChar);
+        System.out.println("Unboxed Float: " + unboxedFloat);
+        System.out.println("Unboxed Boolean: " + unboxedBoolean);
+    }
+}
