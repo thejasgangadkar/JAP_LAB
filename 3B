@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class StriongBufferHandling {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine();
+
+        StringBuffer stringBuffer = new StringBuffer(input);
+
+
+        System.out.println("Initial capacity of the StringBuffer: " + stringBuffer.capacity());
+
+
+        stringBuffer.reverse();
+        String reversedUpperCase = stringBuffer.toString().toUpperCase();
+        System.out.println("Reversed and Uppercase String: " + reversedUpperCase);
+
+        System.out.print("Enter another string to append: ");
+        String appendString = scanner.nextLine();
+        stringBuffer.append(appendString);
+
+
+        System.out.println("Final String after appending: " + stringBuffer.toString());
+
+        scanner.close();
+    }
+}
